@@ -3,11 +3,11 @@ const app = require('express')()
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose")
 
-const username = "Testing"
-const passwordAuth = "Testing"
+const username = process.env.USERNAME
+const passwordAuth = process.env.PASSWORD
 
-const mongoPass = "TestingPass"
-const mongoUser = "Neil"
+const mongoPass = process.env.MONGO_PASS
+const mongoUser = process.env.MONGO_USER
 
 mongoose.connect(`mongodb+srv://${mongoUser}:${mongoPass}@cluster0.i3et1.gcp.mongodb.net/testing?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true });
 
